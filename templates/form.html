@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CV Generator</title>
+  <script>
+    function addSection(id, html) {
+      const container = document.getElementById(id);
+      const div = document.createElement('div');
+      div.innerHTML = html;
+      container.appendChild(div);
+    }
+  </script>
+</head>
+<body>
+  <h1>Fill Out Your CV</h1>
+  <form method="POST">
+
+    <label>Category:</label><input name="category"><br>
+    <label>Staff of:</label><input name="staff_of"><br>
+    <label>Civil Status:</label><input name="civil_status"><br>
+
+    <h2>Personal Info</h2>
+    <label>First Name:</label><input name="first_names"><br>
+    <label>Last Name:</label><input name="family_name"><br>
+    <label>Date of Birth:</label><input name="dob"><br>
+    <label>Nationality:</label><input name="nationality"><br>
+    <label>Civil Status:</label><input name="civil_status"><br>
+    <label>Present Position:</label><input name="present_position"><br>
+    <label>Years in Firm:</label><input name="years_in_firm"><br>
+    <label>Other Skills:</label><input name="other_skills"><br>
+
+    <hr>
+
+    <h2>Education</h2>
+    <div id="education-container">
+      <div>
+        <label>Institution:</label><input name="edu_institution"><br>
+        <label>Start:</label><input name="edu_start"><br>
+        <label>End:</label><input name="edu_end"><br>
+        <label>Degree:</label><input name="edu_degree"><br><br>
+      </div>
+    </div>
+    <button type="button" onclick="addSection('education-container', `
+      <label>Institution:</label><input name='edu_institution'><br>
+      <label>Start:</label><input name='edu_start'><br>
+      <label>End:</label><input name='edu_end'><br>
+      <label>Degree:</label><input name='edu_degree'><br><br>
+    `)">Add Education</button>
+
+    <hr>
+
+    <h2>Experience</h2>
+    <div id="experience-container">
+      <div>
+        <label>From:</label><input name="exp_from"><br>
+        <label>To:</label><input name="exp_to"><br>
+        <label>WDs:</label><input name="exp_wds"><br>
+        <label>Location:</label><input name="exp_location"><br>
+        <label>Company:</label><input name="exp_company"><br>
+        <label>Position:</label><input name="exp_position"><br>
+        <label>Description:</label><textarea name="exp_description"></textarea><br><br>
+      </div>
+    </div>
+    <button type="button" onclick="addSection('experience-container', `
+      <label>From:</label><input name='exp_from'><br>
+      <label>To:</label><input name='exp_to'><br>
+      <label>WDs:</label><input name='exp_wds'><br>
+      <label>Location:</label><input name='exp_location'><br>
+      <label>Company:</label><input name='exp_company'><br>
+      <label>Position:</label><input name='exp_position'><br>
+      <label>Description:</label><textarea name='exp_description'></textarea><br><br>
+    `)">Add Experience</button>
+
+    <hr>
+
+    <h2>Languages</h2>
+    <div id="languages-container">
+      <div>
+        <label>Language:</label><input name="lang_name"><br>
+        <label>Reading:</label><input name="lang_reading"><br>
+        <label>Speaking:</label><input name="lang_speaking"><br>
+        <label>Writing:</label><input name="lang_writing"><br><br>
+      </div>
+    </div>
+    <button type="button" onclick="addSection('languages-container', `
+      <label>Language:</label><input name='lang_name'><br>
+      <label>Reading:</label><input name='lang_reading'><br>
+      <label>Speaking:</label><input name='lang_speaking'><br>
+      <label>Writing:</label><input name='lang_writing'><br><br>
+    `)">Add Language</button>
+
+    <hr>
+
+    <h2>Key Qualifications (comma separated)</h2>
+    <input name="key_qualifications"><br>
+
+    <h2>Memberships (comma separated)</h2>
+    <input name="memberships"><br>
+
+    <h2>Other Relevant Information (comma separated)</h2>
+    <input name="other_relevant_info"><br><br>
+
+    <hr>
+
+<h2>Specific Experience in the Region</h2>
+<div id="region-container">
+  <div>
+    <label>Country 1:</label><input name="country1"><br>
+    <label>Dates 1:</label><input name="dates1"><br>
+    <label>Country 2:</label><input name="country2"><br>
+    <label>Dates 2:</label><input name="dates2"><br><br>
+  </div>
+</div>
+<button type="button" onclick="addSection('region-container', `
+  <label>Country 1:</label><input name='country1'><br>
+  <label>Dates 1:</label><input name='dates1'><br>
+  <label>Country 2:</label><input name='country2'><br>
+  <label>Dates 2:</label><input name='dates2'><br><br>
+`)">Add Region Experience</button>
+
+    <input type="submit" value="Generate CV">
+  </form>
+</body>
+</html>
